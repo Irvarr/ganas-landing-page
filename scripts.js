@@ -10,10 +10,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const quoteText = document.getElementById('quote');
   const newQuoteBtn = document.getElementById('new-quote-btn');
 
-  function generateQuote() {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    quoteText.innerText = quotes[randomIndex];
+  function displayRandomQuote() {
+    if (quoteText) {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      quoteText.classList.remove('fade'); // Remove fade class to reset animation
+      void quoteText.offsetWidth; // Trigger reflow to restart animation
+      quoteText.innerText = quotes[randomIndex];
+      quoteText.classList.add('fade'); // Add fade class for fade-in effect
+    }
   }
 
-  newQuoteBtn.addEventListener('click', generateQuote);
+  if (quoteText && newQuoteBtn) {
+    newQuoteBtn.addEventListener('click', displayRandomQuote);
+  } else {
+    console.error('Quote text or new quote button element not found');
+  }
 });
