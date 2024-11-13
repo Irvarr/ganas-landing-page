@@ -12,16 +12,19 @@ document.addEventListener('DOMContentLoaded', function () {
   const quoteText = document.getElementById('quote');
   const newQuoteBtn = document.getElementById('new-quote-btn');
 
+  // Reset animation by removing and re-adding the 'fade' class
+  function resetFadeAnimation(element) {
+    element.classList.remove('fade');
+    void element.offsetWidth; // Trigger reflow to restart animation
+    element.classList.add('fade');
+  }
+
   // Display Random Quote Function
   function displayRandomQuote() {
     if (quoteText) {
       const randomIndex = Math.floor(Math.random() * quotes.length);
       quoteText.textContent = quotes[randomIndex];
-
-      // Add fade-in effect
-      quoteText.classList.remove('fade'); // Remove the fade class to reset animation
-      void quoteText.offsetWidth; // Trigger reflow to restart animation
-      quoteText.classList.add('fade');
+      resetFadeAnimation(quoteText); // Apply fade-in effect
     }
   }
 
