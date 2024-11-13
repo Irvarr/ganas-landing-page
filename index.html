@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ganas - Empower Your Goals</title>
-  <meta name="description" content="Ganas - Financial Empowerment and Motivation for the Latino Community">
+  <title>Ganas - Adelante con Fuerza</title>
+  <meta name="description" content="Ganas - Adelante con Fuerza">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
 </head>
@@ -17,7 +17,10 @@
     <button id="new-quote-btn">
       <img src="Assets/app_icon.svg" alt="Échale Ganas" />
     </button>
-    <a href="#signup" class="cta-btn">Get Started with Ganas</a>
+    <form id="signup-form">
+      <input type="email" id="email-signup" name="email" placeholder="Enter your email to get updates" required>
+      <button id="signup-btn" class="cta-btn">Sign Up</button>
+    </form>
     <div class="scroll-indicator" aria-hidden="true">↓</div>
   </header>
 
@@ -26,25 +29,19 @@
     <!-- Feature Highlights Section -->
     <section id="features">
       <div class="feature">
-        <svg width="50" height="50" fill="var(--primary-color)" aria-label="Financial Empowerment Icon">
-          <path d="M10 10 H 90 V 90 H 10 L 10 10"></path>
-        </svg>
-        <h2>Financial Empowerment</h2>
-        <p>Track your income, expenses, and savings to achieve your financial goals.</p>
+        <img src="Assets/financial_icon.svg" alt="Con Ganas, Ganas dinero Icon" width="50" height="50">
+        <h2>Ganas Dinero</h2>
+        <p>Grow your money con Ganas. Control your finances and build your future.</p>
       </div>
       <div class="feature">
-        <svg width="50" height="50" fill="var(--primary-color)" aria-label="Daily Motivation Icon">
-          <path d="M10 10 H 90 V 90 H 10 L 10 10"></path>
-        </svg>
-        <h2>Daily Motivation</h2>
-        <p>Stay motivated with daily personalized quotes that inspire you to push forward.</p>
+        <img src="Assets/motivation_icon.svg" alt="Ponte las Pilas Icon" width="50" height="50">
+        <h2>Ponte las Pilas</h2>
+        <p>Motivación para cada día. Stay inspired and keep moving forward.</p>
       </div>
       <div class="feature">
-        <svg width="50" height="50" fill="var(--primary-color)" aria-label="Goal Tracking and Rewards Icon">
-          <path d="M10 10 H 90 V 90 H 10 L 10 10"></path>
-        </svg>
-        <h2>Goal Tracking and Rewards</h2>
-        <p>Set goals and track your progress, earning rewards for your achievements.</p>
+        <img src="Assets/goals_icon.svg" alt="Ganas Icon" width="50" height="50">
+        <h2>Rewards</h2>
+        <p>Set goals, track your progress, and earn rewards for your achievements.</p>
       </div>
     </section>
   </main>
@@ -55,13 +52,13 @@
       <p>Follow Us:</p>
       <div class="social-icons">
         <a href="#" aria-label="Facebook">
-          <svg><!-- Replace with Facebook SVG icon --></svg>
+          <img src="Assets/facebook_icon.svg" alt="Facebook Icon" width="30" height="30">
         </a>
         <a href="#" aria-label="Twitter">
-          <svg><!-- Replace with Twitter SVG icon --></svg>
+          <img src="Assets/twitter_icon.svg" alt="Twitter Icon" width="30" height="30">
         </a>
         <a href="#" aria-label="Instagram">
-          <svg><!-- Replace with Instagram SVG icon --></svg>
+          <img src="Assets/instagram_icon.svg" alt="Instagram Icon" width="30" height="30">
         </a>
       </div>
       <p>&copy; 2024 Ganas. All Rights Reserved.</p>

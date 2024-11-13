@@ -6,6 +6,9 @@
   --accent-color2: #D90429;
   --background-color: #000000; /* Set to black */
   --text-color: #FFFFFF;
+  --button-hover-color: #FF9800; /* Softer hover color for CTA buttons */
+  --input-bg-color: #1c1c1c; /* Dark background for input fields */
+  --input-text-color: #ffffff; /* Light text color for input fields */
 }
 
 /* Basic Reset */
@@ -21,6 +24,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
 /* Hero Section */
@@ -37,17 +41,21 @@ body {
 }
 
 h1 {
-  font-size: 2.5em;
-  margin: 0.5em 0;
+  font-size: 3em; /* Increased size for impact */
+  margin-bottom: 0.5em;
   text-align: center;
 }
 
+/* Quote Styling */
 #quote {
   font-size: 1.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   max-width: 800px;
+  font-style: italic; /* Adding emphasis to quotes */
+  opacity: 0.9;
 }
 
+/* New Quote Button */
 #new-quote-btn {
   background: none;
   border: none;
@@ -56,7 +64,7 @@ h1 {
 }
 
 #new-quote-btn img {
-  width: 50px;
+  width: 60px; /* Slightly larger for better visibility */
   height: auto;
   transition: transform 0.2s ease;
 }
@@ -65,21 +73,67 @@ h1 {
   transform: scale(1.2);
 }
 
+/* Call to Action Button */
 .cta-btn {
   margin-top: 20px;
   background-color: var(--accent-color1);
   color: var(--text-color);
   text-decoration: none;
-  padding: 12px 30px;
-  font-size: 1.2rem;
+  padding: 15px 40px;
+  font-size: 1.4rem;
   border-radius: 5px;
   transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
 }
 
 .cta-btn:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--button-hover-color);
 }
 
+/* Email Sign-Up Form Styling */
+#signup-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#email-signup {
+  background-color: var(--input-bg-color);
+  color: var(--input-text-color);
+  padding: 10px;
+  font-size: 1.1rem;
+  border: 1px solid var(--accent-color1);
+  border-radius: 5px;
+  width: 300px;
+  max-width: 90%;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#email-signup::placeholder {
+  color: var(--accent-color1);
+  opacity: 0.7;
+}
+
+#signup-btn {
+  background-color: var(--accent-color1);
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+#signup-btn:hover {
+  background-color: var(--button-hover-color);
+}
+
+/* Scroll Indicator */
 .scroll-indicator {
   font-size: 2rem;
   margin-top: 20px;
@@ -108,6 +162,7 @@ h1 {
   text-align: center;
 }
 
+.feature img,
 .feature svg {
   width: 60px;
   height: 60px;
@@ -118,44 +173,52 @@ h1 {
 .feature h2 {
   color: var(--accent-color2);
   margin-top: 10px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 .feature p {
   margin-top: 10px;
   color: var(--text-color);
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 /* Footer Section */
 footer {
   background-color: var(--background-color);
-  color: var(--background-color);
+  color: var(--text-color);
   text-align: center;
   padding: 30px 0;
 }
 
 .footer-content a {
-  color: var(--background-color);
+  color: var(--accent-color1);
   text-decoration: none;
   margin: 0 10px;
+  transition: color 0.3s;
 }
 
 .footer-content a:hover {
-  color: var(--accent-color1);
+  color: var(--button-hover-color);
 }
 
+.social-icons img,
 .social-icons svg {
   width: 30px;
   height: 30px;
   fill: var(--accent-color1);
   margin: 0 5px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover,
+.social-icons svg:hover {
+  transform: scale(1.1);
 }
 
 /* Media Queries */
 @media (max-width: 1024px) {
   #hero h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   #quote {
     font-size: 1.6rem;
@@ -164,19 +227,19 @@ footer {
 
 @media (max-width: 768px) {
   #hero h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   #quote {
     font-size: 1.4rem;
   }
   .cta-btn {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 480px) {
   #hero h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   #quote {
     font-size: 1.2rem;
@@ -187,9 +250,17 @@ footer {
   }
   .cta-btn {
     padding: 10px 20px;
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+  #signup-form {
+    width: 100%;
+    padding: 0 10px;
+  }
+  #email-signup {
+    width: 90%;
   }
 }
+
 /* Add fade-in effect for quotes */
 .fade {
   animation: fade-in 0.5s ease;
