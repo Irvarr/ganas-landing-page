@@ -12,58 +12,74 @@ document.addEventListener('DOMContentLoaded', function () {
   const signupForm = document.getElementById('signup-form');
   const emailInput = document.getElementById('email-signup');
 
-  const googleScriptURL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"; // Replace with your deployed script URL
+  const googleScriptURL =
+    "https://script.google.com/macros/s/AKfycbw-44vrGkgVgnglzV8126lheg0I3vSQlyPEz5DiBr1Fiv5LR7ieAQFZFaUNgCO8GIddBQ/exec"; // Deployed script URL
 
-  // Display a random quote
+  // Function to display a random quote
   function displayRandomQuote() {
     if (quoteText) {
       const randomIndex = Math.floor(Math.random() * quotes.length);
-      quoteText.classList.remove('fade'); // Remove fade class to reset animation
+      quoteText.classList.remove('fade'); // Reset animation
       void quoteText.offsetWidth; // Trigger reflow to restart animation
       quoteText.innerText = quotes[randomIndex];
       quoteText.classList.add('fade'); // Add fade class for fade-in effect
+    } else {
+      console.error("Quote element not found");
     }
   }
 
-  // Event listener for generating a new quote
-  if (quoteText && newQuoteBtn) {
+  // Add event listener to generate a new quote
+  if (newQuoteBtn) {
     newQuoteBtn.addEventListener('click', displayRandomQuote);
   } else {
-    console.error('Quote text or new quote button element not found');
+    console.error("New quote button not found");
   }
 
-  // Handle form submission
-  if (signupForm) {
-    signupForm.addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent default form submission
+  // Function to handle form submission
+  function handleSignup(event) {
+    event.preventDefault(); // Prevent default form submission
 
-      const email = emailInput.value.trim();
+    const email = emailInput.value.trim();
 
-      if (email) {
-        fetch(googleScriptURL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email: email }),
+    if (email) {
+      fetch(googleScriptURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: email }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            return response.json(); // Parse response as JSON
+          } else {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
         })
-          .then((response) => {
-            if (response.ok) {
-              alert("Thank you for signing up!"); // Success message
-              emailInput.value = ""; // Clear input
-            } else {
-              alert("There was a problem with your submission. Please try again.");
-            }
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-            alert("An error occurred. Please try again later.");
-          });
-      } else {
-        alert("Please enter a valid email address.");
-      }
-    });
-  } else {
-    console.error('Signup form not found');
+        .then((data) => {
+          if (data.message === "Subscription successful!") {
+            alert("Thank you for signing up!");
+            emailInput.value = ""; // Clear input field
+          } else {
+            alert(data.message || "There was an issue with your submission.");
+          }
+        })
+        .catch((error) => {
+          console.error("Fetch error:", error);
+          alert("An error occurred. Please try again later.");
+        });
+    } else {
+      alert("Please enter a valid email address.");
+    }
   }
+
+  // Add event listener to handle form submission
+  if (signupForm) {
+    signupForm.addEventListener('submit', handleSignup);
+  } else {
+    console.error("Signup form not found");
+  }
+
+  // Display a random quote on page load
+  displayRandomQuote();
 });
