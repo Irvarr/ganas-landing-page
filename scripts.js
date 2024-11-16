@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const emailInput = document.getElementById('email-signup');
 
   const googleScriptURL =
-    "https://script.google.com/macros/s/AKfycbw-44vrGkgVgnglzV8126lheg0I3vSQlyPEz5DiBr1Fiv5LR7ieAQFZFaUNgCO8GIddBQ/exec"; // Deployed script URL
+    "https://script.google.com/macros/s/AKfycbxzfiZnaGuiLf1RyxpPQp7V8wW6OtYpaDEPIm1aH0hlWeFvvBQDTA8rkxNiBX7dVe2Ccw/exec"; // Deployed script URL
 
   // Function to display a random quote
   function displayRandomQuote() {
