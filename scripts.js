@@ -53,11 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
           if (response.ok) {
             return response.json(); // Parse response as JSON
           } else {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            return response.text().then((text) => {
+              throw new Error(`Server Error: ${text}`);
+            });
           }
         })
         .then((data) => {
-          if (data.message === "Subscription successful!") {
+          if (data.status === "success") {
             alert("Thank you for signing up!");
             emailInput.value = ""; // Clear input field
           } else {
