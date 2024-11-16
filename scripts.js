@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (email) {
       fetch(googleScriptURL, {
         method: "POST",
+        mode: "cors", // Explicitly allow CORS
         headers: {
           "Content-Type": "application/json",
         },
