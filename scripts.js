@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Firebase Function URLs
   const localFirebaseFunctionURL = "http://127.0.0.1:5001/ganas-landing/us-central1/subscribeUser"; // Local emulator URL
-  const productionFirebaseFunctionURL = "https://<YOUR-PRODUCTION-ENDPOINT>"; // Replace with your production Firebase Function URL
+  const productionFirebaseFunctionURL = "https://us-central1-ganas-landing.cloudfunctions.net/submitEmail"; // Production Firebase Function URL
   const isLocal = window.location.hostname === "localhost";
   const firebaseFunctionURL = isLocal ? localFirebaseFunctionURL : productionFirebaseFunctionURL;
 
