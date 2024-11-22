@@ -136,30 +136,34 @@ h1 {
 /* Features Section */
 #features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
   padding: 60px 20px;
   text-align: center;
 }
 
-.feature img,
-.feature svg {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 15px;
-  fill: var(--primary-color);
-  transition: transform 0.3s ease;
+.feature {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.feature img:hover,
-.feature svg:hover {
-  transform: scale(1.1);
+.feature:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  transform: scale(1.03);
+}
+
+.feature img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
 }
 
 .feature h2 {
   color: var(--accent-color2);
   margin-top: 10px;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .feature p {
@@ -167,6 +171,26 @@ h1 {
   color: var(--text-color);
   font-size: 1.1rem;
 }
+
+.feature p strong {
+  color: var(--accent-color1);
+}
+
+.features-cta {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.features-cta p {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.features-cta .cta-btn {
+  font-size: 1.2rem;
+  padding: 10px 30px;
+}
+
 
 /* Footer Section */
 footer {
