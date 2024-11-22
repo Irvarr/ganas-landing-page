@@ -332,3 +332,66 @@ a:focus, button:focus, input:focus {
     opacity: 1;
   }
 }
+
+/* Bottom Sign-Up Section */
+#bottom-signup {
+  background-color: #1a1a1a; /* Dark background for contrast */
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 2px solid var(--accent-color1); /* Optional accent border */
+}
+
+#bottom-signup h2 {
+  font-size: 2rem;
+  color: var(--accent-color1);
+  margin-bottom: 15px;
+}
+
+#bottom-signup p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Reuse the same styles for the form */
+#bottom-signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#bottom-email-signup {
+  background-color: var(--input-bg-color);
+  color: var(--input-text-color);
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid var(--accent-color1);
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#bottom-email-signup::placeholder {
+  color: var(--accent-color1);
+  opacity: 0.7;
+}
+
+#bottom-signup-btn {
+  background-color: var(--accent-color1);
+  color: var(--text-color);
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#bottom-signup-btn:hover {
+  background-color: var(--button-hover-color);
+  transform: scale(1.05);
+}
