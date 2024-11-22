@@ -53,6 +53,17 @@ h1 {
   opacity: 0.9;
 }
 
+/* Description Text Beneath Form */
+#description {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-top: 20px;
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
 /* New Quote Button */
 #new-quote-btn {
   background: none;
@@ -117,26 +128,71 @@ h1 {
   opacity: 0.7;
 }
 
-#signup-btn {
-  background-color: var(--accent-color1);
+/* Enlarged Scroll Indicator */
+.scroll-indicator {
+  margin-top: 10px;
+  font-size: 3rem; /* Doubled size */
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Filler Text Styling */
+.filler-text {
+  margin-top: 20px;
+  max-width: 800px;
+  text-align: center;
   color: var(--text-color);
-  padding: 10px 30px;
+  line-height: 1.8;
+}
+
+.filler-text h3 {
+  color: var(--accent-color1);
+  margin: 10px 0;
+  font-size: 1.6rem;
+}
+
+.filler-text p {
+  margin: 10px 0;
   font-size: 1.2rem;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  line-height: 1.6;
 }
 
-#signup-btn:hover {
-  background-color: var(--button-hover-color);
-  transform: scale(1.05);
+.filler-text strong {
+  color: var(--accent-color2);
+  font-weight: bold;
 }
 
-/* Features Section */
+.loading {
+  color: #FFC107; /* Accent color */
+  font-weight: bold;
+}
+
+.success {
+  color: #28a745; /* Green for success */
+  font-weight: bold;
+}
+
+.error {
+  color: #D90429; /* Red for errors */
+  font-weight: bold;
+}
+
+
+/* Feature Section */
 #features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive layout */
   gap: 30px;
   padding: 60px 20px;
   text-align: center;
@@ -162,46 +218,34 @@ h1 {
 
 .feature h2 {
   color: var(--accent-color2);
-  margin-top: 10px;
+  margin: 10px 0;
   font-size: 2rem;
 }
 
 .feature p {
-  margin-top: 10px;
+  margin: 5px 0; /* Reduce spacing between sentences */
   color: var(--text-color);
   font-size: 1.1rem;
+  line-height: 1.6; /* Improve readability */
 }
 
 .feature p strong {
   color: var(--accent-color1);
-}
-
-.features-cta {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.features-cta p {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-}
-
-.features-cta .cta-btn {
-  font-size: 1.2rem;
-  padding: 10px 30px;
+  display: block; /* Makes each sentence appear on a new line */
+  text-align: center; /* Center-aligns the text */
 }
 
 
 /* Footer Section */
 footer {
-  background-color: var(--text-color);
-  color: var(--background-color);
+  background-color: #004d00; /* Dark green color */
+  color: var(--text-color); /* Ensures the text remains white */
   text-align: center;
   padding: 60px 0;
 }
 
 .footer-content a {
-  color: var(--accent-color1);
+  color: var(--accent-color1); /* Yellow accent for links */
   text-decoration: none;
   margin: 0 10px;
   transition: color 0.3s ease, border-bottom 0.3s ease;
@@ -209,7 +253,7 @@ footer {
 
 .footer-content a:hover,
 .footer-content a:focus {
-  color: var(--button-hover-color);
+  color: var(--button-hover-color); /* Softer hover effect */
   border-bottom: 2px solid var(--button-hover-color);
 }
 
@@ -227,29 +271,10 @@ footer {
   transform: scale(1.1);
 }
 
+
 /* Accessibility: Focus Styles */
 a:focus, button:focus, input:focus {
   outline: 2px solid var(--accent-color1);
-}
-
-/* Scroll Indicator */
-.scroll-indicator {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  font-size: 2rem;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
 }
 
 /* Media Queries */
